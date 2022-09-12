@@ -3587,3 +3587,12 @@ h6 {
 	.single-brand-item img{max-width: 100px;}
 	
 	.testimonial_area .owl-carousel .owl-item img{width: 100% !important;}
+	
+	@media(max-width: 767px){
+		.home_banner_area{background-size: contain !important;}
+		.home_banner_area .banner_inner{padding-top: 50px !important;}
+		.btn-group.btn-group-toggle{display:block;}
+		.btn-group.btn-group-toggle label.btn {width: 100%;}
+		.animated-info{min-width:320px;}
+		.footer_area .footer_social a {padding: 0 12px !important;}
+	}
