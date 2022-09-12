@@ -3584,9 +3584,23 @@ h6 {
 		width: 160px;
 		height: 130px;
 	}
+	.client-info {padding: 25px 20px !important;}
+	.client-info .smll{margin-left: 40px;}
+	.call-now .d-flex {align-items: center; padding: 10px 0px;}
+	.call-now .d-flex h5 {margin: 0; font-size:15px;}
+	
+	.call-now .d-flex h5 a{color: #000 !important;}
+	.call-now span {font-size: 40px;}
 	.single-brand-item img{max-width: 100px;}
 	
 	.testimonial_area .owl-carousel .owl-item img{width: 100% !important;}
+	
+	.contact-form .form-group {display: flex; justify-content: center;}
+	
+	.subscription_box{padding: 80px 0px !important;  background-size: cover !important;}
+	.subscription_box .btn{background: #fff; letter-spacing: 1px;}
+	.nice-select ul.list li, .nice-select span.current {color: #000 !important;}
+	.nice-select{width:100% !important;}
 	
 	@media(max-width: 767px){
 		.home_banner_area{background-size: contain !important;}

@@ -5,7 +5,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">
+	<link rel="icon" href="img/i-favicon.ico" type="image/icon">
 	<title>Ibrahim Portfolio</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -169,13 +169,23 @@
 							<span class="lage">5</span>
 							<span class="smll">Years Experience Working</span>
 						</div>
-						<div class="call-now d-flex">
-							<div>
-								<a href="skype:live:mhdibrahim92_1?chat"><span class="fa fa-skype"></span></a>
+						<div class="call-now">
+							<h3 style="text-transform:uppercase">Get connected</h3>
+							<div class="d-flex">
+								<div>
+									<a href="skype:live:mhdibrahim92_1?chat"><span class="fa fa-skype"></span></a>
+								</div>
+								<div class="ml-15">
+									<h5><a href="skype:live:mhdibrahim92_1?chat">Start Chat</a></h5>
+								</div>
 							</div>
-							<div class="ml-15">
-								<p>Get connected</p>
-								<h4><a href="skype:live:mhdibrahim92_1?chat">Start Chat</a></h4>
+							<div class="d-flex">
+								<div>
+									<a href="mailto:mhdibrahim.webtechie@gmail.com"><span class="fa fa-envelope-o"></span></a>
+								</div>
+								<div class="ml-15">
+									<h5><a href="mailto:mhdibrahim.webtechie@gmail.com">mhdibrahim.webtechie@gmail.com</a></h5>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -928,17 +938,38 @@
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-12">
 					<div class="subscription_box text-center">
-						<h2 class="text-uppercase text-white">get update from anywhere</h2>
-						
-						<div class="subcribe-form" id="mc_embed_signup">
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
-								<input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
-								<div style="position: absolute; left: -5000px;">
-									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+						<h2 class="text-uppercase text-white">Feel free to contact</h2>						
+						<div class="subcribe-form">
+							<div class="container">
+							<form name="contact" class="contact-form" method="POST" data-netlify="true" id="contact-form">								
+								<div class="form-group row">
+									<label for="name" class="col-sm-2 col-form-label">Full Name</label>
+									<div class="col-sm-4"><input type="text" class="form-control" id="name" name="name"></div>
 								</div>
-								<button class="primary-btn hover d-inline">Get Started</button>
-								<div class="info"></div>
+								<div class="form-group row">
+									<label for="email" class="col-sm-2 col-form-label">Email</label>
+									<div class="col-sm-4"><input type="email" class="form-control" id="email" name="email"></div>
+								</div>
+								<div class="form-group row">
+									<label for="help" class="col-sm-2 col-form-label">How can we Help?</label>
+									<div class="col-sm-4">
+										<select name="role[]">
+										  <option value="None">Select options</option>	
+										  <option value="Wordpress Development">Wordpress Development</option>
+										  <option value="Opencart Development">Opencart Development</option>
+										  <option value="Support">Support</option>
+										  <option value="Others">Others</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="message" class="col-sm-2 col-form-label">Message</label>
+									<div class="col-sm-4"><textarea rows="5" class="form-control" id="message" name="message"></textarea></div>
+								</div>
+								<button class="btn" type="submit">Send</button>							  
 							</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -998,7 +1029,7 @@
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
 	<script src="js/filter/shuffle.min.js"></script>
-	
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script>
 	
 	// Shuffle js filter and masonry
@@ -1053,6 +1084,31 @@
             }
         });
     });	
+	
+	
+	let testForm = document.querySelector("#contact-form");
+      
+      testForm.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const formData = new FormData(testForm);
+        fetch(testForm.getAttribute('action'), {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then(res => {
+          if (res) {
+            M.toast({
+              html: 'Thank you for your submission!',
+              classes: 'pulse'
+            });
+          }
+        });
+      });
 	
 	</script>
 	
