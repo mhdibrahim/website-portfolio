@@ -941,7 +941,8 @@
 						<h2 class="text-uppercase text-white">Feel free to contact</h2>						
 						<div class="subcribe-form">
 							<div class="container">
-							<form name="contact" class="contact-form" method="POST" data-netlify="true" id="contact-form">								
+							<form name="contact" class="contact-form" method="POST" data-netlify-honeypot="bot-field" data-netlify="true" id="contact-form">
+								<input class="d-none" name="bot-field" />
 								<div class="form-group row">
 									<label for="name" class="col-sm-2 col-form-label">Full Name</label>
 									<div class="col-sm-4"><input type="text" class="form-control" id="name" name="name"></div>
